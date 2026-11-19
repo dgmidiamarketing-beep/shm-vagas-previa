@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Vagas para médicos e profissionais da saúde | SHM Brasil</title>
+<meta name="description" content="Veja o requisito de cada vaga e candidate-se. A equipe de captação da SHM chama você no WhatsApp.">
+<meta name="theme-color" content="#0971b3">
+<link rel="icon" href="assets/img/favicon-shm.png" type="image/png">
+<link rel="preload" href="assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="wrap topo__in">
+    <a class="topo__logo" href="#topo" aria-label="SHM Brasil, início da página">
+      <img src="assets/img/logo-shm.png" alt="SHM Serviços em Saúde" width="600" height="192">
+    </a>
+    <a class="btn btn--pri btn--sm" href="#cadastro" data-cta>Quero me cadastrar</a>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- vaga:hero -->
+  <!-- C01 · Hero -->
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="wrap hero__grid">
+      <div class="hero__texto">
+        <p class="hero__id">SHM Brasil · vagas na saúde</p>
+        <h1 id="hero-titulo">Vagas para médicos especialistas e profissionais da saúde</h1>
+        <p class="hero__lead">Plantões e vagas em cidades de São Paulo e por telemedicina. Confira o requisito de cada vaga abaixo, candidate-se e a equipe de captação da SHM chama você no WhatsApp.</p>
+        <div class="hero__acoes">
+          <a class="btn btn--pri btn--lg" href="#vagas">Ver as vagas abertas</a>
+          <a class="link-apoio" href="#cadastro" data-cta data-outra-vaga>Não achou a sua vaga? Faça seu cadastro</a>
+        </div>
+      </div>
+      <figure class="hero__foto">
+        <img src="assets/img/equipe-corredor.jpg" alt="Médicas e médicos de jaleco branco conversando no corredor de um hospital" width="1600" height="1067" fetchpriority="high">
+      </figure>
+    </div>
+  </section>
+  <!-- /vaga:hero -->
+
+  <!-- vaga:lista -->
+  <!-- C02 · Vagas abertas (logo abaixo do topo; ?vaga= destaca o card) -->
+  <section class="secao secao--suave" id="vagas" aria-labelledby="vagas-titulo">
+    <div class="wrap">
+      <header class="secao__cab">
+        <h2 id="vagas-titulo">Vagas abertas</h2>
+        <p>Cada vaga mostra o requisito pedido. Confira antes de se candidatar: é a primeira coisa que a equipe olha.</p>
+      </header>
+      <p class="aviso aviso--encerrada" data-encerrada hidden>Esta vaga foi encerrada. Veja as vagas abertas ou faça o cadastro na sua especialidade.</p>
+      <ul class="vagas" data-vagas></ul>
+      <div class="vagas__fim">
+        <p>Não achou a sua especialidade? Faça o cadastro mesmo assim e escolha "Outra vaga". A equipe guarda o seu contato pras próximas vagas da sua área.</p>
+        <a class="btn btn--sec" href="#cadastro" data-cta data-outra-vaga>Quero me cadastrar</a>
+      </div>
+    </div>
+  </section>
+  <!-- /vaga:lista -->
+
+  <!-- M01 · Formulário -->
+  <section class="secao cadastro" id="cadastro" aria-labelledby="cadastro-titulo">
+    <div class="wrap cadastro__grid">
+      <div class="cadastro__intro">
+        <h2 id="cadastro-titulo">Cadastro de profissional</h2>
+        <p>São 4 etapas. Os campos com * são obrigatórios.</p>
+        <div class="ficha" data-ficha hidden>
+          <p class="ficha__titulo" data-ficha-titulo></p>
+          <p class="ficha__local"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-ficha-cidade></span></p>
+          <p class="pilula">
+            <span class="pilula__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4h6v3H9z"/><path d="M15 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/><path d="m9 13 2 2 4-4"/></svg></span>
+            <span class="pilula__txt"><strong>Requisito:</strong> <span data-ficha-requisito></span></span>
+          </p>
+        </div>
+      </div>
+
+      <form class="form" data-form novalidate>
+        <p class="aviso aviso--demo" data-demo hidden>Demonstração: este formulário ainda não envia dados.</p>
+        <div class="form__progresso" aria-live="polite">
+          <p class="form__etapa" data-etapa-rotulo>Etapa 1 de 4 · A vaga</p>
+          <div class="form__barra" aria-hidden="true"><span data-etapa-barra></span></div>
+        </div>
+
+        <!-- Etapa 1 · A vaga -->
+        <fieldset class="etapa" data-etapa="1">
+          <legend class="sr">A vaga</legend>
+          <div class="campo">
+            <label for="f-vaga">Para qual vaga é o seu cadastro? *</label>
+            <select id="f-vaga" name="vaga" required data-select-vaga>
+              <option value="">Selecione</option>
+            </select>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="campo" role="radiogroup" aria-labelledby="l-prof">
+            <p class="campo__rot" id="l-prof">Qual a sua profissão? *</p>
+            <div class="opcoes opcoes--2">
+              <label class="opcao"><input type="radio" name="profissao" value="medico" required><span>Médico(a)</span></label>
+              <label class="opcao"><input type="radio" name="profissao" value="psicologo"><span>Psicólogo(a)</span></label>
+              <label class="opcao"><input type="radio" name="profissao" value="to"><span>Terapeuta ocupacional</span></label>
+              <label class="opcao"><input type="radio" name="profissao" value="outra"><span>Outra profissão da saúde</span></label>
+            </div>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="f-esp">Qual a sua especialidade ou área de atuação? *</label>
+            <input id="f-esp" name="especialidade" type="text" placeholder="Ortopedia" autocomplete="off" required>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="form__botoes">
+            <button class="btn btn--pri" type="button" data-avancar>Continuar</button>
+          </div>
+        </fieldset>
+
+        <!-- Etapa 2 · O requisito -->
+        <fieldset class="etapa" data-etapa="2" hidden>
+          <legend class="sr">O requisito</legend>
+          <p class="pede" data-pede hidden>Esta vaga pede: <strong data-pede-txt></strong>.</p>
+
+          <div data-grupo="medico" hidden>
+            <div class="campo" role="radiogroup" aria-labelledby="l-rqe">
+              <p class="campo__rot" id="l-rqe">Você tem RQE na especialidade? *</p>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="rqe" value="Sim"><span>Sim</span></label>
+                <label class="opcao"><input type="radio" name="rqe" value="Não"><span>Não</span></label>
+              </div>
+              <p class="campo__erro" hidden></p>
+            </div>
+            <div class="campo" role="radiogroup" aria-labelledby="l-res">
+              <p class="campo__rot" id="l-res">E residência médica na especialidade? *</p>
+              <div class="opcoes opcoes--3">
+                <label class="opcao"><input type="radio" name="residencia" value="Concluída"><span>Concluída</span></label>
+                <label class="opcao"><input type="radio" name="residencia" value="Estou cursando"><span>Estou cursando</span></label>
+                <label class="opcao"><input type="radio" name="residencia" value="Não fiz"><span>Não fiz</span></label>
+              </div>
+              <p class="campo__erro" hidden></p>
+            </div>
+            <div class="campo" role="radiogroup" aria-labelledby="l-pos">
+              <p class="campo__rot" id="l-pos">E pós-graduação na especialidade? *</p>
+              <div class="opcoes opcoes--3">
+                <label class="opcao"><input type="radio" name="pos" value="Concluída"><span>Concluída</span></label>
+                <label class="opcao"><input type="radio" name="pos" value="Estou cursando"><span>Estou cursando</span></label>
+                <label class="opcao"><input type="radio" name="pos" value="Não fiz"><span>Não fiz</span></label>
+              </div>
+              <p class="campo__erro" hidden></p>
+            </div>
+          </div>
+
+          <div data-grupo="psicologo" hidden>
+            <div class="campo" role="radiogroup" aria-labelledby="l-crp">
+              <p class="campo__rot" id="l-crp">Seu CRP está ativo? *</p>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="crp" value="Sim"><span>Sim</span></label>
+                <label class="opcao"><input type="radio" name="crp" value="Não"><span>Não</span></label>
+              </div>
+              <p class="campo__erro" hidden></p>
+            </div>
+            <div class="campo" role="radiogroup" aria-labelledby="l-libras">
+              <p class="campo__rot" id="l-libras">Você tem certificação em Libras? *</p>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="libras" value="Sim"><span>Sim</span></label>
+                <label class="opcao"><input type="radio" name="libras" value="Não"><span>Não</span></label>
+              </div>
+              <p class="campo__erro" hidden></p>
+            </div>
+          </div>
+
+          <div data-grupo="to" hidden>
+            <div class="campo" role="radiogroup" aria-labelledby="l-formado">
+              <p class="campo__rot" id="l-formado">Você é terapeuta ocupacional formado(a)? *</p>
+              <div class="opcoes">
+                <label class="opcao"><input type="radio" name="formado" value="Sim"><span>Sim</span></label>
+                <label class="opcao"><input type="radio" name="formado" value="Ainda estou estudando"><span>Ainda estou estudando</span></label>
+              </div>
+              <p class="campo__erro" hidden></p>
+            </div>
+          </div>
+
+          <p class="aviso aviso--requisito" data-aviso-requisito hidden>Esta vaga pede <span data-aviso-txt></span>. Você pode enviar o cadastro mesmo assim: ele fica com a equipe pra vagas que aceitem o seu perfil.</p>
+
+          <div class="form__botoes">
+            <button class="btn btn--volta" type="button" data-voltar>Voltar</button>
+            <button class="btn btn--pri" type="button" data-avancar>Continuar</button>
+          </div>
+        </fieldset>
+
+        <!-- Etapa 3 · Onde você está -->
+        <fieldset class="etapa" data-etapa="3" hidden>
+          <legend class="sr">Onde você está</legend>
+          <div class="campo">
+            <label for="f-cidade">Cidade onde você mora *</label>
+            <input id="f-cidade" name="cidade" type="text" autocomplete="address-level2" required>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="f-uf">Estado (UF) *</label>
+            <select id="f-uf" name="uf" required>
+              <option value="">Selecione</option>
+              <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option>
+            </select>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="form__botoes">
+            <button class="btn btn--volta" type="button" data-voltar>Voltar</button>
+            <button class="btn btn--pri" type="button" data-avancar>Continuar</button>
+          </div>
+        </fieldset>
+
+        <!-- Etapa 4 · Seu contato -->
+        <fieldset class="etapa" data-etapa="4" hidden>
+          <legend class="sr">Seu contato</legend>
+          <div class="campo">
+            <label for="f-nome">Nome completo *</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="f-whats">WhatsApp com DDD *</label>
+            <input id="f-whats" name="whatsapp" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(12) 99999-9999" required>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="campo">
+            <label for="f-email">E-mail <span class="opc">(opcional)</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email">
+            <p class="campo__erro" hidden></p>
+          </div>
+          <div class="campo" role="radiogroup" aria-labelledby="l-hora">
+            <p class="campo__rot" id="l-hora">Melhor horário pra falarmos com você <span class="opc">(opcional)</span></p>
+            <div class="opcoes opcoes--3">
+              <label class="opcao"><input type="radio" name="horario" value="Manhã"><span>Manhã</span></label>
+              <label class="opcao"><input type="radio" name="horario" value="Tarde"><span>Tarde</span></label>
+              <label class="opcao"><input type="radio" name="horario" value="Noite"><span>Noite</span></label>
+            </div>
+          </div>
+          <div class="campo campo--check">
+            <label class="check"><input type="checkbox" name="autorizacao" value="sim" required><span>Autorizo a SHM Brasil a usar meus dados pra falar comigo sobre vagas, conforme a <a href="https://shmbrasil.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>. *</span></label>
+            <p class="campo__erro" hidden></p>
+          </div>
+          <p class="aviso aviso--falha" data-falha hidden>Não conseguimos enviar agora. Tente de novo em instantes ou fale com a equipe pelo WhatsApp (12) 3936-9627.</p>
+          <div class="form__botoes">
+            <button class="btn btn--volta" type="button" data-voltar>Voltar</button>
+            <button class="btn btn--pri" type="submit" data-enviar>Enviar cadastro</button>
+          </div>
+          <p class="form__apoio">O cadastro não confirma vaga nem plantão. A equipe confere o requisito e fala com você pelo WhatsApp.</p>
+        </fieldset>
+      </form>
+    </div>
+  </section>
+
+  <!-- C03 · Como funciona -->
+  <section class="secao secao--suave" aria-labelledby="como-titulo">
+    <div class="wrap">
+      <header class="secao__cab">
+        <h2 id="como-titulo">Como funciona</h2>
+      </header>
+      <ol class="passos">
+        <li class="passo"><span class="passo__n" aria-hidden="true">1</span><p>Você escolhe a vaga e confere o requisito.</p></li>
+        <li class="passo"><span class="passo__n" aria-hidden="true">2</span><p>Faz o cadastro com o seu WhatsApp.</p></li>
+        <li class="passo"><span class="passo__n" aria-hidden="true">3</span><p>A equipe de captação da SHM confere o requisito e chama você pra combinar escala, valores e forma de contratação.</p></li>
+      </ol>
+      <div class="centro"><a class="btn btn--pri" href="#cadastro" data-cta>Quero me cadastrar</a></div>
+    </div>
+  </section>
+
+  <!-- vaga:c04 -->
+  <!-- C04 · Por que a SHM (só versão geral e vagas de médico) -->
+  <section class="secao porque" data-c04 aria-labelledby="porque-titulo">
+    <div class="wrap porque__grid">
+      <figure class="porque__foto">
+        <img src="assets/img/medicas-clinica.jpg" alt="Duas médicas de jaleco conferindo pranchetas no corredor de uma clínica" width="1400" height="933" loading="lazy">
+      </figure>
+      <div class="porque__texto">
+        <h2 id="porque-titulo">Pagamento no prazo e agenda organizada com você</h2>
+        <p class="porque__lead">A SHM Brasil faz a gestão de escalas e de equipes médicas pra hospitais e clínicas, a partir de São José dos Campos (SP). Pra médicos que trabalham com a SHM:</p>
+        <ul class="vantagens">
+          <li>
+            <span class="vantagens__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg></span>
+            <p><strong>Remuneração dentro do prazo.</strong> Garantimos que o profissional receba o valor combinado dentro do prazo estabelecido.</p>
+          </li>
+          <li>
+            <span class="vantagens__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg></span>
+            <p><strong>Gestão da agenda.</strong> Podemos organizar e otimizar seus horários de acordo com suas preferências e compromissos.</p>
+          </li>
+          <li>
+            <span class="vantagens__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span>
+            <p><strong>Aplicativo exclusivo.</strong> Todas as informações necessárias ficam na palma da mão, por meio do nosso aplicativo exclusivo para médicos.</p>
+          </li>
+          <li>
+            <span class="vantagens__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m10 12 4 4M14 12l-4 4"/></svg></span>
+            <p><strong>Sem CRM de pessoa jurídica.</strong> Dispensamos a necessidade do registro do CRM (Conselho Regional de Medicina) de pessoa jurídica.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- /vaga:c04 -->
+
+  <!-- C05 · Depoimentos (só com o sim da SHM: MOSTRAR_DEPOIMENTOS) -->
+  <section class="secao secao--suave depo" data-c05 aria-labelledby="depo-titulo">
+    <div class="wrap">
+      <p class="aviso aviso--pend" data-pend hidden>Prévia: os depoimentos só entram na página publicada com o sim da SHM.</p>
+      <header class="secao__cab">
+        <h2 id="depo-titulo">O que dizem do atendimento da SHM</h2>
+      </header>
+      <ul class="depos">
+        <li class="depo__card">
+          <blockquote><p>"Empresa acompanha a jornada do atendimento com excelência. Fui atendido pela Rafaela que, em todos os momentos, mostrou interesse conduzindo o processo de forma cordial, promovendo segurança e confiança."</p></blockquote>
+          <p class="depo__nome">Guerino Cascapera Neto</p>
+        </li>
+        <li class="depo__card">
+          <blockquote><p>"Excelente atendimento conduzido pela Rafaela, que prontamente me orientou e forneceu todas as instruções que precisava. Parabéns a toda a equipe pelo excelente trabalho."</p></blockquote>
+          <p class="depo__nome">Deia Brito</p>
+        </li>
+        <li class="depo__card">
+          <blockquote><p>"Empresa séria e confiável, com excelentes oportunidades. Gestores cordiais, receptivos e altamente capacitados. Em particular, Marcela conduziu meu atendimento formidavelmente."</p></blockquote>
+          <p class="depo__nome">Marcelly Aparecida Teixeira Rodrigues</p>
+        </li>
+      </ul>
+      <p class="depo__fonte">Depoimentos publicados em shmbrasil.com.br.</p>
+    </div>
+  </section>
+
+  <!-- C06 · Perguntas frequentes -->
+  <section class="secao faq" aria-labelledby="faq-titulo">
+    <div class="wrap wrap--estreito">
+      <header class="secao__cab">
+        <h2 id="faq-titulo">Perguntas frequentes</h2>
+      </header>
+      <div class="faq__lista">
+        <details><summary>Qual o valor do plantão?</summary><p>Depende da vaga, da escala e da forma de contratação. A equipe passa os valores no contato, antes de qualquer compromisso.</p></details>
+        <details><summary>O cadastro garante a vaga?</summary><p>Não. O cadastro é o primeiro passo: a equipe confere o requisito, conversa com você, e só depois a vaga e a escala são combinadas.</p></details>
+        <details><summary>Não tenho o requisito da vaga. Posso me cadastrar?</summary><p>Pode. Quem atende ao requisito é chamado primeiro pra aquela vaga, e o seu cadastro fica com a equipe pra vagas que aceitem o seu perfil.</p></details>
+        <details><summary>Estou na residência. Conta como requisito?</summary><p>Nas vagas que pedem residência, conta a residência concluída. Se você ainda está cursando, marque "Estou cursando" no formulário.</p></details>
+        <details><summary>Preciso ter empresa pra trabalhar com a SHM?</summary><p>A forma de contratação depende da vaga e é explicada no contato. A SHM não exige o registro da sua empresa no CRM.</p></details>
+        <details><summary>Quem vai entrar em contato comigo?</summary><p>A equipe de captação da SHM, pelo WhatsApp que você informar no cadastro.</p></details>
+        <details><summary>Como vocês usam os meus dados?</summary><p>Pra falar com você sobre vagas da SHM. Os detalhes estão na <a href="https://shmbrasil.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a> da SHM Brasil.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- C07 · Chamada final -->
+  <section class="final" aria-labelledby="final-titulo">
+    <div class="wrap final__in">
+      <h2 id="final-titulo">Faça seu cadastro e a equipe fala com você pelo WhatsApp</h2>
+      <div class="final__acoes">
+        <a class="btn btn--branco btn--lg" href="#cadastro" data-cta>Quero me cadastrar</a>
+        <!-- vaga:outras --><!-- /vaga:outras -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- R01 · Rodapé -->
+<footer class="rodape">
+  <div class="wrap rodape__grid">
+    <img class="rodape__logo" src="assets/img/logo-shm-branco.png" alt="SHM Serviços em Saúde" width="600" height="192">
+    <div class="rodape__dados">
+      <p><strong>SHM Brasil</strong></p>
+      <p>Edifício Sun Tower, Av. Salmão, 663, Sala 82, Jardim Aquarius, São José dos Campos (SP), 12246-260</p>
+      <p>(12) 3936-9627 · relacionamento@gruposatta.com.br</p>
+      <p data-cnpj hidden></p>
+    </div>
+    <nav class="rodape__links" aria-label="Links da SHM Brasil">
+      <a href="https://shmbrasil.com.br/politica-de-privacidade" target="_blank" rel="noopener">Política de Privacidade</a>
+      <a href="https://shmbrasil.com.br/termos-de-uso" target="_blank" rel="noopener">Termos de Uso</a>
+      <a href="https://shmbrasil.com.br" target="_blank" rel="noopener">Site da SHM Brasil</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="cta-fixo" data-cta-fixo aria-hidden="true">
+  <a class="btn btn--pri btn--bloco" href="#cadastro" data-cta tabindex="-1">Quero me cadastrar</a>
+</div>
+
+<script src="assets/config.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
